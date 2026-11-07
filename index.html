@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Generated Web App Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+        }
+        h1 {
+            color: #0056b3;
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- This H1 could be generated from a prompt like "Create a title for a demo app" -->
+        <h1>Welcome to Your AI-Generated App!</h1>
+        <!-- This paragraph content could be generated from a prompt like "Add an introductory paragraph" -->
+        <p id="dynamicText">
+            This is a simple web application demonstrating how AI tools like Cursor can quickly scaffold functional web pages from basic text prompts. Click the button below to see an interaction!
+        </p>
+        <!-- This button and its functionality could be generated from a prompt like "Add a button that changes the paragraph text" -->
+        <button id="actionButton">Click Me!</button>
+    </div>
+
+    <script>
+        const dynamicText = document.getElementById('dynamicText');
+        const actionButton = document.getElementById('actionButton');
+        let clickCount = 0;
+
+        actionButton.addEventListener('click', () => {
+            clickCount++;
+            if (clickCount % 2 === 1) {
+                dynamicText.textContent = "Great! You've successfully interacted with this AI-generated component. Imagine building complex features with just a few prompts!";
+                actionButton.textContent = "Click Again!";
+            } else {
+                dynamicText.textContent = "This is a simple web application demonstrating how AI tools like Cursor can quickly scaffold functional web pages from basic text prompts. Click the button below to see an interaction!";
+                actionButton.textContent = "Click Me!";
+            }
+        });
+    </script>
+</body>
+</html>
